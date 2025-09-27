@@ -1,5 +1,6 @@
 #include <iostream> 
 #include <iomanip>
+#include <cmath> 
 #include <cassert>
 #include <sstream>
 #ifndef M_PI
@@ -58,4 +59,23 @@ public:
         double totalDegrees = static_cast<double>(degrees) + static_cast<double>(minutes) / 60.0;
         return (totalDegrees / 180.0) * M_PI;
     }
+    //  5)  sin 
+    double sin() const { return std::sin(toRadians()); }
+
+    //  6)  cos 
+    double cos() const { return std::cos(toRadians()); }
+
+    //  7) Checking the equality of two corners 
+    bool operator==(const Angle& other) const {
+        return degrees == other.degrees && minutes == other.minutes;
+    }
+
+    //  8) Angle Comparison 
+    bool operator<(const Angle& other) const {
+        if (degrees != other.degrees) return degrees < other.degrees;
+        return minutes < other.minutes;
+    }
+    bool operator>(const Angle& other) const { return other < *this; }
+    bool operator<=(const Angle& other) const { return !(*this > other); }
+    bool operator>=(const Angle& other) const { return !(*this < other); }
 };
