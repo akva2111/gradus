@@ -22,7 +22,9 @@ public:
     std::string toString() const;
 
     int getDegrees() const;
+    void setDegrees(int deg);
     int getMinutes() const;
+    void setMinutes(int min);
 
     double toRadians() const;
     double sin() const;

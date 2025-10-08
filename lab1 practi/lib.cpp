@@ -44,8 +44,18 @@ std::string Angle::toString() const {
 }
 
 int Angle::getDegrees() const { return degrees; }
+void Angle::setDegrees(int deg) {
+    degrees = deg;
+    normalize();
+}
+
+void Angle::setMinutes(int min) {
+    minutes = min;
+    normalize();
+}
 
 int Angle::getMinutes() const { return minutes; }
+
 
 double Angle::toRadians() const {
     double totalDegrees = static_cast<double>(degrees) + static_cast<double>(minutes) / 60.0;

@@ -40,7 +40,7 @@ int main() {
     while (keepGoing) {
         std::cout << "\n--- menu ---" << std::endl;
         std::cout << "operac:" << std::endl;
-        std::cout << "1. input new degrees" << std::endl;
+        std::cout << "1. input new angle" << std::endl;
         std::cout << "2. output now degrees" << std::endl;
         std::cout << "3. take sin degrees" << std::endl;
         std::cout << "4. take cos degrees" << std::endl;
@@ -50,13 +50,15 @@ int main() {
         std::cout << "8. Zoom out to a different angle (-=)" << std::endl;
         std::cout << "9. Multiply by a number (*)" << std::endl;
         std::cout << "10. Fold with a different angle (+)" << std::endl;
+        std::cout << "11. input new minut" << std::endl;
+        std::cout << "12. input new degrees" << std::endl;
         std::cout << "0. end calculator" << std::endl;
         std::cout << "---------------------" << std::endl;
 
         int choice = getIntegerInput("choos operaciy (input number from 0 to 10): ");
         Angle otherAngle;
         int multiplier;
-
+        int number;
         switch (choice) {
         case 1:
             inputAngleSafely(currentAngle, "\n--- input new degrees ---");
@@ -113,6 +115,16 @@ int main() {
             inputAngleSafely(otherAngle, "Enter the second corner for addition:");
             currentAngle = currentAngle + otherAngle;
             displayCurrentAngle(currentAngle);
+            break;
+        case 11:
+            std::cout << "input new minute" << std::endl;
+            std::cin >> number;
+            currentAngle.setMinutes(number);
+            break;
+        case 12:
+            std::cout << "input new degree" << std::endl;
+            std::cin >> number;
+            currentAngle.setDegrees(number);
             break;
         case 0:
             keepGoing = false;
