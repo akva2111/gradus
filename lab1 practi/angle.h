@@ -1,5 +1,4 @@
-#ifndef ANGLE_H
-#define ANGLE_H
+#pragma once
 
 #include <string>
 #include <cmath>
@@ -41,7 +40,5 @@ public:
     Angle operator+(const Angle& other) const;
     Angle operator-() const;
 
-    friend Angle operator*(int n, const Angle& angle);
+    Angle operator*=(int n) const;
 };
-
-#endif#pragma once

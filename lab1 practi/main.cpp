@@ -105,7 +105,7 @@ int main() {
         case 9:
             std::cout << "\n--- Multiply by a number ---" << std::endl;
             multiplier = getIntegerInput("Enter the number to multiply: ");
-            currentAngle = currentAngle * multiplier;
+            currentAngle = currentAngle *= multiplier;
             displayCurrentAngle(currentAngle);
             break;
         case 10:

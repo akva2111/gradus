@@ -122,6 +122,13 @@ Angle Angle::operator-() const {
     return result;
 }
 
-Angle operator*(int n, const Angle& angle) {
-    return angle * n;
+Angle Angle::operator*=(int n) const {
+    if (n == 0) return Angle(0, 0);
+    Angle result;
+    result.degrees = n * this->degrees;
+    result.minutes = n * this->minutes;
+    result.normalize();
+    assert(result.degrees >= 0 && result.degrees < 360);
+    assert(result.minutes >= 0 && result.minutes < 60);
+    return result;
 }
