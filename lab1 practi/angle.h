@@ -41,6 +41,4 @@ public:
     Angle operator*(int n) const;
     Angle operator+(const Angle& other) const;
     Angle operator-() const;
-
-    Angle operator*=(int n) const;
 };
